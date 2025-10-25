@@ -1,3 +1,16 @@
+const initialMessage = () => {
+  const message = document.getElementById("lesson-level");
+  const div = document.createElement("div");
+  div.innerHTML = `
+     <div class="space-y-3 py-10">
+                <h5 class="text-sm">আপনি এখনো কোনো lesson select করেন নি</h5>
+                <h3 class="text-xl font-bold">একটি lesson select করুন</h3>
+            </div>
+
+    `;
+  message.appendChild(div);
+};
+
 const loadLession = () => {
   const url = "https://openapi.programming-hero.com/api/levels/all";
   fetch(url)
@@ -83,7 +96,7 @@ const loadWordDetails = (id) => {
 // Display word deatils
 const displayWordDetails = (object) => {
   const word_details = document.getElementById("word-details");
-  word_details.innerHTML="";
+  word_details.innerHTML = "";
   const div = document.createElement("div");
   div.classList.add(
     "border",
@@ -110,3 +123,4 @@ const displayWordDetails = (object) => {
   document.getElementById("my_modal_5").showModal();
 };
 loadLession();
+initialMessage();
