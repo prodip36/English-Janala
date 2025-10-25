@@ -52,7 +52,7 @@ const loadLessonContent = (object) => {
                     <h3 class="text-xl font-semibold">"${data.meaning} / ${data.pronunciation}"</h3>
                 </div>
                 <div class="flex justify-between">
-                    <div class="bg-[#e8f4ff] p-3 cursor-pointer rounded-lg"><i class="fa-solid fa-info  "></i></div>
+                    <div onclick="loadWordDetails(${data.id})" class="bg-[#e8f4ff] p-3 cursor-pointer rounded-lg"><i class="fa-solid fa-info  "></i></div>
                     <div class="bg-[#e8f4ff] p-3 cursor-pointer rounded-lg" ><i class="fa-solid fa-volume-high "></i></div>
                 </div>
             </div>
@@ -60,5 +60,53 @@ const loadLessonContent = (object) => {
     lesson_level.appendChild(div);
   });
 };
-
+//  "data": {
+//     "word": "Eager",
+//     "meaning": "আগ্রহী",
+//     "pronunciation": "ইগার",
+//     "level": 1,
+//     "sentence": "The kids were eager to open their gifts.",
+//     "points": 1,
+//     "partsOfSpeech": "adjective",
+//     "synonyms": [
+//       "enthusiastic",
+//       "excited",
+//       "keen"
+//     ],
+// Load word details
+const loadWordDetails = (id) => {
+  const url = `https://openapi.programming-hero.com/api/word/${id}`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => displayWordDetails(data.data));
+};
+// Display word deatils
+const displayWordDetails = (object) => {
+  const word_details = document.getElementById("word-details");
+  word_details.innerHTML="";
+  const div = document.createElement("div");
+  div.classList.add(
+    "border",
+    "border-[#eff8ff]",
+    "p-2",
+    "rounded-lg",
+    "space-y-3"
+  );
+  div.innerHTML = `
+            <h2 class="font-bold text-xl">${object.word} ( <i class="fa-solid fa-microphone"></i>: ${object.pronunciation} )</h2>
+    <h5 class="font-semibold text-sm">Meaning</h5>
+    <h6 class="text-base">${object.meaning}</h6>
+    <h4 class="font-semibold text-sm">Example</h4>
+    <p class="text-sm">${object.sentence}</p>
+    <h3 class="font-bold">সমার্থক শব্দ গুলো</h3>
+    <div class="flex gap-1">
+        <p class="px-3 bg-[#edf7ff] text-sm rounded-md">${object.synonyms[0]}</p>
+        <p class="px-3 bg-[#edf7ff] text-sm rounded-md">${object.synonyms[1]}</p>
+        <p class="px-3 bg-[#edf7ff] text-sm rounded-md">${object.synonyms[2]}</p>
+     
+    </div>
+    `;
+  word_details.appendChild(div);
+  document.getElementById("my_modal_5").showModal();
+};
 loadLession();
