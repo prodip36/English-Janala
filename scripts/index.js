@@ -2,7 +2,7 @@ const initialMessage = () => {
   const message = document.getElementById("lesson-level");
   const div = document.createElement("div");
   div.innerHTML = `
-     <div class="space-y-3 py-10">
+     <div class=" justify-center items-center space-y-3 py-10">
                 <h5 class="text-sm">আপনি এখনো কোনো lesson select করেন নি</h5>
                 <h3 class="text-xl font-bold">একটি lesson select করুন</h3>
             </div>
@@ -55,6 +55,20 @@ const loadLessonData = (id) => {
 const loadLessonContent = (object) => {
   const lesson_level = document.getElementById("lesson-level");
   lesson_level.innerHTML = "";
+  lesson_level.classList.add("grid", "md:grid-cols-2", "lg:grid-cols-3");
+  if (object.length == 0) {
+     lesson_level.classList.remove("grid", "md:grid-cols-2", "lg:grid-cols-3");
+    const no_data=document.createElement('div');
+    no_data.innerHTML = `
+         <div class="space-y-3">
+            <img class="w-32 mx-auto" src="./assets/alert-error.png" alt="">
+            <p class="text-sm">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+            <h3 class="text-2xl font-bold">নেক্সট Lesson এ যান</h3>
+          </div>
+    `;
+    lesson_level.appendChild(no_data);
+    return;
+  }
   object.forEach((data) => {
     const div = document.createElement("div");
     div.innerHTML = `
