@@ -146,5 +146,12 @@ const displayWordDetails = (object) => {
   word_details.appendChild(div);
   document.getElementById("my_modal_5").showModal();
 };
+const scrollToFaq=()=>{
+  document.getElementById('FAQ').scrollIntoView({behavior: "smooth"});
+}
+const learnSection=()=>{
+  document.getElementById('learn-section').scrollIntoView({behavior:"smooth"});
+}
+
 loadLession();
 initialMessage();
