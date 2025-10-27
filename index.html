@@ -25,7 +25,7 @@
   <body>
     <header>
       <!-- navbar -->
-      <nav class="bg-[#ebebeb] flex justify-between p-5">
+      <nav id="navbar-section" class="hidden bg-[#ebebeb] flex justify-between p-5">
         <div class="flex">
           <h4 class="font-semibold">English</h4>
           <img class="w-7 h-7" src="./assets/logo.png" alt="" />
@@ -55,7 +55,7 @@
       <!-- banner section -->
 
       <nav class="w-11/12 mx-auto flex gap-5 items-center justify-between">
-        <div class="space-y-5 w-1/2">
+        <div id="log-in-section" class="space-y-5 w-1/2">
           <h1 class="text-3xl font-bold">
             <span class="text-[#00bcff]">English</span> is easy!!
           </h1>
@@ -64,20 +64,20 @@
             আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে
             অন্য একটি Level এ
           </p>
-          <form action="" class="space-y-3">
+          <form action="" class=" space-y-3">
             <input type="text" placeholder="Enter name" /> <br />
-            <input type="password" name="" id="" placeholder="e.g-123456" />
+            <input id="input-pass" type="password" name="" placeholder="e.g-123456" />
             <br />
-            <button class="btn bg-[#422ad5] text-white">Get Started</button>
+            <button id="btn-get-started" class="btn bg-[#422ad5] text-white">Get Started</button>
           </form>
         </div>
         <div><img class="" src="./assets/hero-student.png" alt="" /></div>
       </nav>
     </header>
     <!-- main section -->
-    <main class="w-11/12 mx-auto py-20">
+    <main id="main-section" class="hidden w-11/12 mx-auto py-20">
       <!-- vocabulary section -->
-      <section id="learn-section" class="text-center space-y-4">
+      <section id="learn-section" class=" text-center space-y-4">
         <h1 class="text-3xl font-bold">
           <span class="text-[#00bcff]">Let's </span>Learn Vocabularies
         </h1>
@@ -90,9 +90,9 @@
       <!-- data section -->
       <section
         id="lesson-level"
-        class="bg-[#f8f8f8] p-5 mt-5 rounded-md gap-5 items-center justify-around text-center"
+        class=" bg-[#f8f8f8] p-5 mt-5 rounded-md gap-5 items-center justify-around text-center"
       ></section>
-      <section>
+      <section class="">
         <!-- modal -->
 
         <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
@@ -108,7 +108,7 @@
         </dialog>
       </section>
       <!-- FAQ section -->
-      <section id="FAQ" class="my-10 space-y-2">
+      <section id="FAQ" class=" my-10 space-y-2">
         <h1 class="text-center font-bold text-3xl mb-5">
           <span class="text-[#30c8ff]">Frequently</span> Asked Questions
         </h1>

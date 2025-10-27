@@ -10,12 +10,12 @@ const initialMessage = () => {
     `;
   message.appendChild(div);
 };
-const removeActiveBtn=()=>{
-const active_button=document.getElementsByClassName('active');
-for(let btn of active_button){
-  btn.classList.remove('active');
-}
-}
+const removeActiveBtn = () => {
+  const active_button = document.getElementsByClassName("active");
+  for (let btn of active_button) {
+    btn.classList.remove("active");
+  }
+};
 const loadLession = () => {
   const url = "https://openapi.programming-hero.com/api/levels/all";
   fetch(url)
@@ -38,7 +38,7 @@ const displayLession = (object) => {
          <button id="lesson-id-${data.level_no}"  onclick="loadLessonData(${data.level_no})" class="btn hover:bg-[#422ad5] hover:text-white group"><i class="fa-solid fa-book-open"></i>Lesson -${data.level_no}</button>
         
         `;
-        
+
     lesson.appendChild(div);
   });
 };
@@ -55,7 +55,7 @@ const loadLessonData = (id) => {
   console.log(id);
   removeActiveBtn();
   const active = document.getElementById(`lesson-id-${id}`);
-  active.classList.add('active');
+  active.classList.add("active");
   const url = `https://openapi.programming-hero.com/api/level/${id}`;
   fetch(url)
     .then((res) => res.json())
@@ -146,12 +146,31 @@ const displayWordDetails = (object) => {
   word_details.appendChild(div);
   document.getElementById("my_modal_5").showModal();
 };
-const scrollToFaq=()=>{
-  document.getElementById('FAQ').scrollIntoView({behavior: "smooth"});
-}
-const learnSection=()=>{
-  document.getElementById('learn-section').scrollIntoView({behavior:"smooth"});
-}
+const scrollToFaq = () => {
+  document.getElementById("FAQ").scrollIntoView({ behavior: "smooth" });
+};
+const learnSection = () => {
+  document
+    .getElementById("learn-section")
+    .scrollIntoView({ behavior: "smooth" });
+};
+//log in section
+document.getElementById("btn-get-started").addEventListener('click',(e)=>{
+  e.preventDefault();
+  const inp_val = parseFloat(document.getElementById('input-pass').value);
+  if(inp_val==123456)
+  {
+    console.log(inp_val);
+    
+    document.getElementById("navbar-section").classList.remove("hidden");
+    document.getElementById("main-section").classList.remove("hidden");
+    
+    document.getElementById("log-in-section").classList.add('invisible');
+  }
+  else{
+    alert("Wrong pass!")
+  }
 
+})
 loadLession();
 initialMessage();
