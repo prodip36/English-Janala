@@ -10,7 +10,12 @@ const initialMessage = () => {
     `;
   message.appendChild(div);
 };
-
+const removeActiveBtn=()=>{
+const active_button=document.getElementsByClassName('active');
+for(let btn of active_button){
+  btn.classList.remove('active');
+}
+}
 const loadLession = () => {
   const url = "https://openapi.programming-hero.com/api/levels/all";
   fetch(url)
@@ -30,9 +35,10 @@ const displayLession = (object) => {
   object.forEach((data) => {
     const div = document.createElement("div");
     div.innerHTML = `
-         <button id="lesson-id-${data.id}" onclick="loadLessonData(${data.level_no})" class="btn hover:bg-[#422ad5] hover:text-white group"><img class="group-hover:invert" src="./assets/fa-book-open.png " alt="">Lesson -${data.level_no}</button>
+         <button id="lesson-id-${data.level_no}"  onclick="loadLessonData(${data.level_no})" class="btn hover:bg-[#422ad5] hover:text-white group"><i class="fa-solid fa-book-open"></i>Lesson -${data.level_no}</button>
         
         `;
+        
     lesson.appendChild(div);
   });
 };
@@ -46,6 +52,10 @@ const displayLession = (object) => {
 //     },
 // display lesson item
 const loadLessonData = (id) => {
+  console.log(id);
+  removeActiveBtn();
+  const active = document.getElementById(`lesson-id-${id}`);
+  active.classList.add('active');
   const url = `https://openapi.programming-hero.com/api/level/${id}`;
   fetch(url)
     .then((res) => res.json())
@@ -57,8 +67,8 @@ const loadLessonContent = (object) => {
   lesson_level.innerHTML = "";
   lesson_level.classList.add("grid", "md:grid-cols-2", "lg:grid-cols-3");
   if (object.length == 0) {
-     lesson_level.classList.remove("grid", "md:grid-cols-2", "lg:grid-cols-3");
-    const no_data=document.createElement('div');
+    lesson_level.classList.remove("grid", "md:grid-cols-2", "lg:grid-cols-3");
+    const no_data = document.createElement("div");
     no_data.innerHTML = `
          <div class="space-y-3">
             <img class="w-32 mx-auto" src="./assets/alert-error.png" alt="">

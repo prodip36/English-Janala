@@ -14,6 +14,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
+    <style>
+      .active{
+        background-color: #422ad5;
+        color: white;
+      }
+
+    </style>
   </head>
   <body>
     <header>
@@ -28,32 +35,20 @@
           <button
             class="btn group text-[#422ad5] text-sm font-semibold border border-[#422ad5] bg-[#ebebeb] hover:bg-[#422ad5] hover:text-white"
           >
-            <img
-              class="group-hover:invert w-3 h-3"
-              src="./assets/fa-circle-question.png"
-              alt=""
-            />
+            <i class="fa-solid fa-circle-question"></i>
             FAQ
           </button>
 
           <button
             class="btn group text-[#422ad5] text-sm font-semibold border border-[#422ad5] bg-[#ebebeb] hover:bg-[#422ad5] hover:text-white"
           >
-            <img
-              class="group-hover:invert w-3 h-3"
-              src="./assets/fa-book-open.png"
-              alt=""
-            />Learn
+           <i class="fa-solid fa-book-open"></i>Learn
           </button>
 
           <button
             class="btn group text-[#422ad5] text-sm font-semibold border border-[#422ad5] bg-[#ebebeb] hover:bg-[#422ad5] hover:text-white"
           >
-            <img
-              class="group-hover:invert w-3 h-3"
-              src="./assets/fa-arrow-right-from-bracket.png"
-              alt=""
-            />Logout
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>Logout
           </button>
         </div>
       </nav>
@@ -113,38 +108,53 @@
         </dialog>
       </section>
       <!-- FAQ section -->
-       <section class="my-10 space-y-2">
-        <h1 class="text-center font-bold text-3xl mb-5"><span class="text-[#30c8ff]">Frequently</span> Asked Questions</h1>
+      <section class="my-10 space-y-2">
+        <h1 class="text-center font-bold text-3xl mb-5">
+          <span class="text-[#30c8ff]">Frequently</span> Asked Questions
+        </h1>
 
-    <div class="collapse collapse-plus  border border-base-300  ">
-  <input type="radio" name="my-accordion-3" checked="checked" />
-  <div class="collapse-title font-semibold bg-[#f8f8f8]">How can I start learning English on this website?</div>
-  <div class="collapse-content text-sm bg-[#f8f8f8]">Follow up the lesson part carefully.</div>
-</div>
-    <div class="collapse collapse-plus  border border-base-300 ">
-  <input type="radio" name="my-accordion-3" checked="checked" />
-  <div class="collapse-title font-semibold bg-[#f8f8f8]">Is this website free to use?</div>
-  <div class="collapse-content text-sm bg-[#f8f8f8]">Yes!</div>
-</div>
-    <div class="collapse collapse-plus  border border-base-300">
-  <input type="radio" name="my-accordion-3" checked="checked" />
-  <div class="collapse-title font-semibold bg-[#f8f8f8]">3.  Do I need to create an account?</div>
-  <div class="collapse-content text-sm bg-[#f8f8f8]">Obviously.</div>
-</div>
-    <div class="collapse collapse-plus  border border-base-300">
-  <input type="radio" name="my-accordion-3" checked="checked" />
-  <div class="collapse-title font-semibold bg-[#f8f8f8]">4. How can I build my English vocabulary?</div>
-  <div class="collapse-content text-sm bg-[#f8f8f8]">Practice more & more.</div>
-</div>
-    <div class="collapse collapse-plus  border border-base-300">
-  <input type="radio" name="my-accordion-3" checked="checked" />
-  <div class="collapse-title font-semibold bg-[#f8f8f8]">5. Do you offer certificates for completed courses?</div>
-  <div class="collapse-content text-sm bg-[#f8f8f8]">No. We dont!</div>
-</div>
-
-
-       </section>
+        <div class="collapse collapse-plus border border-base-300">
+          <input type="radio" name="my-accordion-3" checked="checked" />
+          <div class="collapse-title font-semibold bg-[#f8f8f8]">
+            How can I start learning English on this website?
+          </div>
+          <div class="collapse-content text-sm bg-[#f8f8f8]">
+            Follow up the lesson part carefully.
+          </div>
+        </div>
+        <div class="collapse collapse-plus border border-base-300">
+          <input type="radio" name="my-accordion-3" checked="checked" />
+          <div class="collapse-title font-semibold bg-[#f8f8f8]">
+            Is this website free to use?
+          </div>
+          <div class="collapse-content text-sm bg-[#f8f8f8]">Yes!</div>
+        </div>
+        <div class="collapse collapse-plus border border-base-300">
+          <input type="radio" name="my-accordion-3" checked="checked" />
+          <div class="collapse-title font-semibold bg-[#f8f8f8]">
+            3. Do I need to create an account?
+          </div>
+          <div class="collapse-content text-sm bg-[#f8f8f8]">Obviously.</div>
+        </div>
+        <div class="collapse collapse-plus border border-base-300">
+          <input type="radio" name="my-accordion-3" checked="checked" />
+          <div class="collapse-title font-semibold bg-[#f8f8f8]">
+            4. How can I build my English vocabulary?
+          </div>
+          <div class="collapse-content text-sm bg-[#f8f8f8]">
+            Practice more & more.
+          </div>
+        </div>
+        <div class="collapse collapse-plus border border-base-300">
+          <input type="radio" name="my-accordion-3" checked="checked" />
+          <div class="collapse-title font-semibold bg-[#f8f8f8]">
+            5. Do you offer certificates for completed courses?
+          </div>
+          <div class="collapse-content text-sm bg-[#f8f8f8]">No. We dont!</div>
+        </div>
+      </section>
     </main>
+
     <!-- footer section -->
     <footer
       class="w-11/12 mx-auto flex justify-between items-center p-10 border-t mb-5 border-t-gray-200"
